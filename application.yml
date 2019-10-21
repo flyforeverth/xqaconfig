@@ -1,0 +1,198 @@
+spring.profiles.active: dev
+---
+spring.profiles: dev
+ribbon:
+  ReadTimeout: 480000
+  ConnectTimeout: 300000
+# Oracle\u6570\u636e\u5e93
+spring:
+  jackson:
+    deserialization:
+      accept_empty_string_as_null_object: true
+
+# \u662f\u5426\u542f\u7528\u5f02\u6b65\u6ce8\u89e3
+# ansyn.method.enable=true
+#climb database
+  datasource:
+    climb:
+      driver-class-name: oracle.jdbc.driver.OracleDriver
+      url: jdbc:oracle:thin:@191.168.0.61:1521:XQA
+      username: xqa_TRD
+      password: xpar
+
+  redis:
+    cluster:
+      nodes: 191.168.0.61:6480,191.168.0.61:6481,191.168.0.61:6482,191.168.0.61:6483,191.168.0.61:6484,191.168.0.61:6485
+      max-redirects: 3
+    enable: true
+    password: redis
+    timeout: 10000
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://191.168.0.61:1111/eureka
+
+engine:
+  service:
+    url: http://191.168.0.61:8080/xqa
+
+### xxl-job admin address list, such as "http://address" or "http://address01,http://address02"
+xxl:
+  job:
+    admin:
+      addresses: http://191.168.2.38:8088/xxl-job-admin
+### xxl-job executor address
+    executor:
+      appname: land-task
+      ip:
+      port: 9999
+      ### xxl-job log path
+      logpath: /home/xqa/applogs/xxl-job/jobhandler
+      ### xxl-job log retention days
+      logretentiondays: -1
+### xxl-job, access token
+    accessToken:
+
+logging:
+  level:
+    com.clamc.climb.quota.land: debug
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+# actuator关闭验证
+management:
+  security:
+    enabled: false
+
+---
+spring.profiles: test
+ribbon:
+  ReadTimeout: 480000
+  ConnectTimeout: 300000
+# Oracle\u6570\u636e\u5e93
+spring:
+  jackson:
+    deserialization:
+      accept_empty_string_as_null_object: true
+
+# \u662f\u5426\u542f\u7528\u5f02\u6b65\u6ce8\u89e3
+# ansyn.method.enable=true
+#climb database
+  datasource:
+    climb:
+      driver-class-name: oracle.jdbc.driver.OracleDriver
+      url: jdbc:oracle:thin:@191.168.0.61:1521:XQA
+      username: xqa_TRD
+      password: xpar
+
+  redis:
+    cluster:
+      nodes: 191.168.0.61:6480,191.168.0.61:6481,191.168.0.61:6482,191.168.0.61:6483,191.168.0.61:6484,191.168.0.61:6485
+      max-redirects: 3
+    enable: true
+    password: redis
+    timeout: 10000
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://191.168.0.61:1111/eureka
+
+engine:
+  service:
+    url: http://191.168.0.61:8080/xqa
+
+### xxl-job admin address list, such as "http://address" or "http://address01,http://address02"
+xxl:
+  job:
+    admin:
+      addresses: http://191.168.2.38:8088/xxl-job-admin
+### xxl-job executor address
+    executor:
+      appname: land-task
+      ip:
+      port: 9999
+      ### xxl-job log path
+      logpath: /home/xqa/applogs/xxl-job/jobhandler
+      ### xxl-job log retention days
+      logretentiondays: -1
+### xxl-job, access token
+    accessToken:
+
+logging:
+  level:
+    com.clamc.climb.quota.land: debug
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+# actuator关闭验证
+management:
+  security:
+    enabled: false
+
+---
+spring.profiles: stage
+ribbon:
+  ReadTimeout: 480000
+  ConnectTimeout: 300000
+# Oracle\u6570\u636e\u5e93
+spring:
+  jackson:
+    deserialization:
+      accept_empty_string_as_null_object: true
+
+# \u662f\u5426\u542f\u7528\u5f02\u6b65\u6ce8\u89e3
+# ansyn.method.enable=true
+#climb database
+  datasource:
+    climb:
+      driver-class-name: oracle.jdbc.driver.OracleDriver
+      url: jdbc:oracle:thin:@191.168.0.61:1521:XQA
+      username: xqa_TRD
+      password: xpar
+
+  redis:
+    cluster:
+      nodes: 191.168.0.61:6480,191.168.0.61:6481,191.168.0.61:6482,191.168.0.61:6483,191.168.0.61:6484,191.168.0.61:6485
+      max-redirects: 3
+    enable: true
+    password: redis
+    timeout: 10000
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://191.168.0.61:1111/eureka
+
+engine:
+  service:
+    url: http://191.168.0.61:8080/xqa
+
+### xxl-job admin address list, such as "http://address" or "http://address01,http://address02"
+xxl:
+  job:
+    admin:
+      addresses: http://191.168.2.38:8088/xxl-job-admin
+### xxl-job executor address
+    executor:
+      appname: land-task
+      ip:
+      port: 9999
+      ### xxl-job log path
+      logpath: /home/xqa/applogs/xxl-job/jobhandler
+      ### xxl-job log retention days
+      logretentiondays: -1
+### xxl-job, access token
+    accessToken:
+
+logging:
+  level:
+    com.clamc.climb.quota.land: debug
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+# actuator关闭验证
+management:
+  security:
+    enabled: false
